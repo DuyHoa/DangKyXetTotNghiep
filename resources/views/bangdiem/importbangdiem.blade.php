@@ -9,9 +9,6 @@
             <li>Tên header của các trường lần lượt là MaSV, MaMon, TenMon, TC, Diem</li>
         </ul>
     </div>
-    <form style="border: 4px solid #e8e7e7; margin-top: 15px;padding: 10px; display: flex; align-items: center; width: fit-content;" action="{{ url('importbangdiemsv') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
-        @csrf
- 
         @if ($errors->any())
             <div class="alert alert-danger">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -29,6 +26,10 @@
                 <p>{{ Session::get('success') }}</p>
             </div>
         @endif
+    <form style="border: 4px solid #e8e7e7; margin-top: 15px;padding: 10px; display: flex; align-items: center; width: fit-content;" action="{{ url('importbangdiemsv') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+        @csrf
+ 
+        
  
         <input type="file" name="import_file" />
         <button class="btn btn-primary">Nhập file</button>
